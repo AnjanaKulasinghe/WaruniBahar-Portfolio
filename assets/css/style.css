@@ -4,19 +4,19 @@
     --bg-secondary: #0f0f0f;
     --bg-tertiary: #1a1a1a;
     --bg-card: #151515;
-    
+
     --cyber-green: #00ff41;
     --cyber-green-dark: #00cc33;
     --cyber-green-glow: rgba(0, 255, 65, 0.3);
-    
+
     --cyber-purple: #a855f7;
     --cyber-magenta: #c026d3;
     --cyber-purple-glow: rgba(168, 85, 247, 0.3);
-    
+
     --text-primary: #e0e0e0;
     --text-secondary: #b0b0b0;
     --text-muted: #808080;
-    
+
     --border-color: #2a2a2a;
     --border-glow: rgba(0, 255, 65, 0.2);
 }
@@ -53,7 +53,7 @@ body.menu-open {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: 
+    background-image:
         linear-gradient(rgba(0, 255, 65, 0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(0, 255, 65, 0.03) 1px, transparent 1px);
     background-size: 50px 50px;
@@ -63,8 +63,13 @@ body.menu-open {
 }
 
 @keyframes gridMove {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(50px); }
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(50px);
+    }
 }
 
 #particle-canvas {
@@ -112,9 +117,19 @@ body.menu-open {
 }
 
 @keyframes glowFloat {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    33% { transform: translate(100px, -80px) scale(1.1); }
-    66% { transform: translate(-100px, 100px) scale(0.9); }
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(100px, -80px) scale(1.1);
+    }
+
+    66% {
+        transform: translate(-100px, 100px) scale(0.9);
+    }
 }
 
 /* ===== NAVIGATION ===== */
@@ -240,11 +255,9 @@ body.menu-open {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        to bottom,
-        transparent 50%,
-        rgba(0, 255, 65, 0.03) 50%
-    );
+    background: linear-gradient(to bottom,
+            transparent 50%,
+            rgba(0, 255, 65, 0.03) 50%);
     background-size: 100% 4px;
     animation: scanline 8s linear infinite;
     pointer-events: none;
@@ -252,8 +265,13 @@ body.menu-open {
 }
 
 @keyframes scanline {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(100vh); }
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(100vh);
+    }
 }
 
 .matrix-rain {
@@ -344,21 +362,55 @@ body.menu-open {
 }
 
 @keyframes glitch-anim {
-    0% { clip: rect(17px, 9999px, 94px, 0); }
-    20% { clip: rect(76px, 9999px, 67px, 0); }
-    40% { clip: rect(131px, 9999px, 20px, 0); }
-    60% { clip: rect(43px, 9999px, 123px, 0); }
-    80% { clip: rect(100px, 9999px, 58px, 0); }
-    100% { clip: rect(65px, 9999px, 85px, 0); }
+    0% {
+        clip: rect(17px, 9999px, 94px, 0);
+    }
+
+    20% {
+        clip: rect(76px, 9999px, 67px, 0);
+    }
+
+    40% {
+        clip: rect(131px, 9999px, 20px, 0);
+    }
+
+    60% {
+        clip: rect(43px, 9999px, 123px, 0);
+    }
+
+    80% {
+        clip: rect(100px, 9999px, 58px, 0);
+    }
+
+    100% {
+        clip: rect(65px, 9999px, 85px, 0);
+    }
 }
 
 @keyframes glitch-anim-2 {
-    0% { clip: rect(65px, 9999px, 119px, 0); }
-    20% { clip: rect(36px, 9999px, 90px, 0); }
-    40% { clip: rect(121px, 9999px, 35px, 0); }
-    60% { clip: rect(55px, 9999px, 100px, 0); }
-    80% { clip: rect(89px, 9999px, 70px, 0); }
-    100% { clip: rect(24px, 9999px, 145px, 0); }
+    0% {
+        clip: rect(65px, 9999px, 119px, 0);
+    }
+
+    20% {
+        clip: rect(36px, 9999px, 90px, 0);
+    }
+
+    40% {
+        clip: rect(121px, 9999px, 35px, 0);
+    }
+
+    60% {
+        clip: rect(55px, 9999px, 100px, 0);
+    }
+
+    80% {
+        clip: rect(89px, 9999px, 70px, 0);
+    }
+
+    100% {
+        clip: rect(24px, 9999px, 145px, 0);
+    }
 }
 
 .typing-container {
@@ -382,8 +434,16 @@ body.menu-open {
 }
 
 @keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
 }
 
 .hero-stats {
@@ -566,10 +626,13 @@ body.menu-open {
 }
 
 @keyframes pulse {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: scale(1);
         opacity: 0.3;
     }
+
     50% {
         transform: scale(1.1);
         opacity: 0.6;
@@ -596,8 +659,13 @@ body.menu-open {
 }
 
 @keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .data-streams {
@@ -610,29 +678,44 @@ body.menu-open {
     position: absolute;
     width: 2px;
     height: 100%;
-    background: linear-gradient(
-        to bottom,
-        transparent,
-        var(--cyber-green),
-        transparent
-    );
+    background: linear-gradient(to bottom,
+            transparent,
+            var(--cyber-green),
+            transparent);
     opacity: 0.5;
     animation: stream 2s ease-in-out infinite;
 }
 
-.stream-1 { left: 10%; animation-delay: 0s; }
-.stream-2 { left: 35%; animation-delay: 0.5s; }
-.stream-3 { left: 65%; animation-delay: 1s; }
-.stream-4 { right: 10%; animation-delay: 1.5s; }
+.stream-1 {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.stream-2 {
+    left: 35%;
+    animation-delay: 0.5s;
+}
+
+.stream-3 {
+    left: 65%;
+    animation-delay: 1s;
+}
+
+.stream-4 {
+    right: 10%;
+    animation-delay: 1.5s;
+}
 
 @keyframes stream {
     0% {
         transform: translateY(-100%);
         opacity: 0;
     }
+
     50% {
         opacity: 0.5;
     }
+
     100% {
         transform: translateY(100%);
         opacity: 0;
@@ -861,22 +944,27 @@ section {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.3),
-        transparent
-    );
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent);
     animation: shimmer 2s infinite;
 }
 
 @keyframes progressLoad {
-    from { width: 0; }
+    from {
+        width: 0;
+    }
 }
 
 @keyframes shimmer {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
 }
 
 .tech-tags {
@@ -987,13 +1075,11 @@ section {
     top: 0;
     bottom: 0;
     width: 2px;
-    background: linear-gradient(
-        to bottom,
-        transparent,
-        var(--cyber-green),
-        var(--cyber-purple),
-        transparent
-    );
+    background: linear-gradient(to bottom,
+            transparent,
+            var(--cyber-green),
+            var(--cyber-purple),
+            transparent);
 }
 
 .timeline-item {
@@ -1160,28 +1246,42 @@ section {
     font-size: 0.85rem;
 }
 
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
 .project-link {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
     color: var(--cyber-green);
     text-decoration: none;
     font-weight: 600;
+    font-size: 0.9rem;
     transition: all 0.3s ease;
 }
 
 .project-link svg {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     transition: transform 0.3s ease;
 }
 
 .project-link:hover {
-    gap: 1rem;
+    border-color: var(--cyber-green);
+    box-shadow: 0 0 15px var(--cyber-green-glow);
+    transform: translateY(-2px);
 }
 
 .project-link:hover svg {
-    transform: translateX(5px);
+    transform: translateX(3px);
 }
 
 /* ===== CONTACT SECTION ===== */
@@ -1356,6 +1456,7 @@ section {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -1366,6 +1467,7 @@ section {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -1378,11 +1480,11 @@ section {
         grid-template-columns: 1fr;
         gap: 3rem;
     }
-    
+
     .hero-visual {
         order: -1;
     }
-    
+
     .security-shield {
         width: 250px;
         height: 250px;
@@ -1393,7 +1495,7 @@ section {
     .hamburger {
         display: flex;
     }
-    
+
     .nav-links {
         position: fixed;
         top: 0;
@@ -1408,11 +1510,11 @@ section {
         transition: right 0.3s ease;
         border-left: 1px solid var(--border-color);
     }
-    
+
     .nav-links.active {
         right: 0;
     }
-    
+
     .menu-backdrop {
         position: fixed;
         top: 0;
@@ -1426,32 +1528,32 @@ section {
         pointer-events: none;
         transition: opacity 0.3s ease;
     }
-    
+
     .menu-backdrop.active {
         opacity: 1;
         pointer-events: all;
     }
-    
+
     .hero-title {
         font-size: 3rem;
     }
-    
+
     .hero-stats {
         grid-template-columns: 1fr;
     }
-    
+
     .hero-actions {
         flex-direction: column;
     }
-    
+
     .skills-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .contact-container {
         grid-template-columns: 1fr;
     }
-    
+
     .projects-container {
         grid-template-columns: 1fr;
     }
@@ -1461,39 +1563,39 @@ section {
     section {
         padding: 4rem 1.5rem;
     }
-    
+
     .hero {
         padding: 5rem 1.5rem 3rem;
     }
-    
+
     .hero-title {
         font-size: 2.5rem;
     }
-    
+
     .section-title {
         font-size: 2rem;
     }
-    
+
     .title-bracket {
         font-size: 2.5rem;
     }
-    
+
     .about-text-section {
         padding: 2rem;
     }
-    
+
     .skill-category {
         padding: 2rem;
     }
-    
+
     .timeline {
         padding-left: 2rem;
     }
-    
+
     .timeline-dot {
         left: -2.4rem;
     }
-    
+
     .footer-content {
         flex-direction: column;
         gap: 2rem;
@@ -1505,21 +1607,21 @@ section {
     .hero-title {
         font-size: 2rem;
     }
-    
+
     .typing-container {
         font-size: 1rem;
     }
-    
+
     .btn-primary,
     .btn-secondary {
         padding: 0.8rem 1.5rem;
         font-size: 0.85rem;
     }
-    
+
     .section-title {
         font-size: 1.5rem;
     }
-    
+
     .certifications-container {
         grid-template-columns: 1fr;
     }

@@ -1,6 +1,11 @@
 # Waruni Bahar - Cybersecurity & Cloud Portfolio
 
+[![Live Site](https://img.shields.io/badge/Live%20Site-genibahar.com-00ff41?style=for-the-badge&logo=google-chrome&logoColor=white)](https://genibahar.com)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Cybersecurity%20%26%20Cloud-a855f7?style=for-the-badge)](https://genibahar.com)
+
 A modern, cybersecurity-themed portfolio website showcasing expertise in QA Engineering, Cybersecurity, and Cloud Computing.
+
+**Live at: [genibahar.com](https://genibahar.com)**
 
 ## 🌟 Features
 
@@ -11,6 +16,34 @@ A modern, cybersecurity-themed portfolio website showcasing expertise in QA Engi
 - **Custom Cursor**: Enhanced cursor effects on desktop
 - **Glitch Effects**: Cyberpunk-style text glitches
 - **Matrix Rain**: Authentic Matrix-style falling characters
+- **SEO Optimized**: Complete with sitemap, robots.txt, structured data, and meta tags
+
+## 🔍 SEO Features
+
+### Included for Google Indexing:
+- ✅ **sitemap.xml** - Complete site structure for search engines
+- ✅ **robots.txt** - Crawling instructions for search bots
+- ✅ **Meta Tags** - Title, description, keywords optimized for search
+- ✅ **Open Graph Tags** - Enhanced social media sharing
+- ✅ **Twitter Card Tags** - Optimized Twitter previews
+- ✅ **JSON-LD Structured Data** - Schema.org Person markup
+- ✅ **Canonical URL** - Prevents duplicate content issues
+- ✅ **Semantic HTML5** - Proper heading hierarchy and structure
+- ✅ **Mobile Responsive** - Mobile-first design (Google ranking factor)
+- ✅ **Fast Loading** - Optimized assets and minimal dependencies
+
+### Google Search Console Setup:
+1. Visit [Google Search Console](https://search.google.com/search-console)
+2. Add property: `genibahar.com`
+3. Verify ownership (DNS or HTML file method)
+4. Submit sitemap: `https://genibahar.com/sitemap.xml`
+5. Request indexing for key pages
+6. Monitor performance and fix any issues
+
+### Submit to Search Engines:
+- **Google**: [Submit URL](https://www.google.com/webmasters/tools/submit-url)
+- **Bing**: [Bing Webmaster Tools](https://www.bing.com/webmasters)
+- **Sitemap URL**: `https://genibahar.com/sitemap.xml`
 
 ## 🎨 Color Palette
 
@@ -61,20 +94,48 @@ A modern, cybersecurity-themed portfolio website showcasing expertise in QA Engi
    - Branch: `main` / `root`
    - Click Save
 
-3. Your site will be live at: `https://YOUR_USERNAME.github.io/YOUR_REPO/`
+3. Your site will be live at: `https://genibahar.com` (custom domain configured)
 
-### Custom Domain (Optional)
+### Custom Domain Setup
 
-1. Create a `CNAME` file in the root directory with your domain:
-   ```
-   yourdomain.com
-   ```
+The portfolio is configured to use the custom domain **genibahar.com**.
 
-2. Configure DNS settings at your domain registrar:
-   - Add a CNAME record pointing to `YOUR_USERNAME.github.io`
-   - Or add A records pointing to GitHub's IP addresses
+**DNS Configuration Required:**
 
-3. Enable HTTPS in GitHub Pages settings
+At your domain registrar, configure the following DNS records:
+
+**Option 1: Using CNAME (Recommended if supported):**
+```
+Type: CNAME
+Name: @ (or leave blank for root domain)
+Value: YOUR_GITHUB_USERNAME.github.io
+```
+
+**Option 2: Using A Records (For root domain):**
+```
+Type: A
+Name: @ (or leave blank)
+Value: 185.199.108.153
+Value: 185.199.109.153
+Value: 185.199.110.153
+Value: 185.199.111.153
+```
+
+**For www subdomain:**
+```
+Type: CNAME
+Name: www
+Value: YOUR_GITHUB_USERNAME.github.io
+```
+
+**After DNS Configuration:**
+1. Go to GitHub repository Settings → Pages
+2. Under "Custom domain", enter: `genibahar.com`
+3. Click Save
+4. Wait for DNS check to complete (may take up to 48 hours)
+5. Enable "Enforce HTTPS" once DNS is verified
+
+**Note:** The CNAME file is already included in the repository root.
 
 ## 📝 Customization Guide
 
@@ -116,9 +177,11 @@ To add/remove sections:
 
 ```
 WaruniBahar-Portfolio/
-├── index.html              # Main HTML file
+├── index.html              # Main HTML file with SEO meta tags
+├── sitemap.xml             # XML sitemap for search engines
+├── robots.txt              # Search engine crawling rules
 ├── README.md               # Documentation
-├── CNAME                   # Custom domain (optional)
+├── CNAME                   # Custom domain configuration
 ├── .gitignore              # Git ignore file
 └── assets/
     ├── css/
@@ -126,8 +189,11 @@ WaruniBahar-Portfolio/
     ├── js/
     │   ├── particles.js    # Particle animation system
     │   └── main.js         # Interactive features
-    └── img/
-        └── favicon.ico     # Site favicon
+    ├── img/
+    │   └── favicon.ico     # Site favicon
+    └── projects/
+        ├── Project/        # Assignment/project briefs
+        └── Solution/       # Completed solutions (PDF & video)
 ```
 
 ## 🛠️ Technologies Used

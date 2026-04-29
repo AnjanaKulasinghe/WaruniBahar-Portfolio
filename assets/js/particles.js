@@ -29,7 +29,7 @@ class Particle {
         this.speedX = Math.random() * 0.5 - 0.25;
         this.speedY = Math.random() * 0.5 - 0.25;
         this.opacity = Math.random() * 0.5 + 0.2;
-        
+
         // Cyber color palette - green, purple, magenta
         const colors = [
             `rgba(0, 255, 65, ${this.opacity})`,      // Cyber green
@@ -55,7 +55,7 @@ class Particle {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
-        
+
         // Add glow effect
         ctx.shadowBlur = 10;
         ctx.shadowColor = this.color;
@@ -105,10 +105,10 @@ function animateParticles() {
 function createMatrixRain() {
     const matrixContainer = document.getElementById('matrixRain');
     if (!matrixContainer) return;
-    
+
     const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
     const columns = Math.floor(window.innerWidth / 20);
-    
+
     for (let i = 0; i < columns; i++) {
         const drop = document.createElement('div');
         drop.style.position = 'absolute';

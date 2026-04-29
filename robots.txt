@@ -1,0 +1,17 @@
+# robots.txt for genibahar.com
+
+User-agent: *
+Allow: /
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/img/
+Allow: /assets/projects/
+
+# Disallow large video files from crawling to save bandwidth
+Disallow: /assets/projects/Solution/*.mp4
+
+# Sitemap
+Sitemap: https://genibahar.com/sitemap.xml
+
+# Crawl-delay (optional, helps prevent server overload)
+Crawl-delay: 1

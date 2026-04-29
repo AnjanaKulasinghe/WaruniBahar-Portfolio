@@ -248,6 +248,168 @@ if (window.innerWidth > 768) {
     });
 }
 
+// ===== CERTIFICATIONS SLIDER =====
+const initCertificationsSlider = () => {
+    const slider = document.querySelector('.certifications-slider');
+    if (!slider) return;
+
+    const container = slider.querySelector('.certifications-container');
+    const originalCards = Array.from(container.querySelectorAll('.cert-card'));
+    const prevBtn = slider.querySelector('.slider-btn-prev');
+    const nextBtn = slider.querySelector('.slider-btn-next');
+    const dotsContainer = slider.querySelector('.slider-dots');
+
+    // Clone cards for infinite loop effect
+    const cloneCount = originalCards.length;
+    originalCards.forEach(card => {
+        const cloneBefore = card.cloneNode(true);
+        const cloneAfter = card.cloneNode(true);
+        container.insertBefore(cloneBefore, container.firstChild);
+        container.appendChild(cloneAfter);
+    });
+
+    const allCards = container.querySelectorAll('.cert-card');
+    const totalOriginalCards = originalCards.length;
+    let currentIndex = totalOriginalCards; // Start at first real card
+    let cardsPerView = 3;
+    let touchStartX = 0;
+    let touchEndX = 0;
+    let isTransitioning = false;
+
+    // Calculate cards per view based on screen size
+    const updateCardsPerView = () => {
+        if (window.innerWidth <= 640) {
+            cardsPerView = 1;
+        } else if (window.innerWidth <= 968) {
+            cardsPerView = 2;
+        } else {
+            cardsPerView = 3;
+        }
+    };
+
+    // Create dots (one for each original card)
+    const createDots = () => {
+        dotsContainer.innerHTML = '';
+        for (let i = 0; i < totalOriginalCards; i++) {
+            const dot = document.createElement('div');
+            dot.classList.add('slider-dot');
+            dot.addEventListener('click', () => goToSlide(i + totalOriginalCards));
+            dotsContainer.appendChild(dot);
+        }
+        updateDots();
+    };
+
+    // Update dots only
+    const updateDots = () => {
+        const dots = dotsContainer.querySelectorAll('.slider-dot');
+        const actualIndex = ((currentIndex - totalOriginalCards) % totalOriginalCards + totalOriginalCards) % totalOriginalCards;
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === actualIndex);
+        });
+    };
+
+    // Update slider position
+    const updateSlider = (withTransition = true) => {
+        const cardWidth = allCards[0].offsetWidth;
+        const gap = 32;
+        const offset = -(currentIndex * (cardWidth + gap));
+
+        container.style.transition = withTransition ? 'transform 0.5s ease' : 'none';
+        container.style.transform = `translateX(${offset}px)`;
+
+        updateDots();
+    };
+
+    // Handle infinite loop reset
+    const checkLoop = () => {
+        if (currentIndex >= totalOriginalCards * 2) {
+            // Went past the last real card, loop back to first real card
+            currentIndex = totalOriginalCards;
+            updateSlider(false);
+        } else if (currentIndex < totalOriginalCards) {
+            // Went before the first real card, loop back
+            currentIndex = currentIndex + totalOriginalCards;
+            updateSlider(false);
+        }
+    };
+
+    // Go to specific slide
+    const goToSlide = (index) => {
+        if (isTransitioning) return;
+        currentIndex = index;
+        updateSlider();
+    };
+
+    // Next slide (infinite)
+    const nextSlide = () => {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        currentIndex++;
+        updateSlider();
+    };
+
+    // Previous slide (infinite)
+    const prevSlide = () => {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        currentIndex--;
+        updateSlider();
+    };
+
+    // Handle transition end
+    container.addEventListener('transitionend', () => {
+        isTransitioning = false;
+        checkLoop();
+    });
+
+    // Touch support
+    container.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+
+    container.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+
+    const handleSwipe = () => {
+        if (touchEndX < touchStartX - 50) {
+            nextSlide();
+        }
+        if (touchEndX > touchStartX + 50) {
+            prevSlide();
+        }
+    };
+
+    // Event listeners
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') prevSlide();
+        if (e.key === 'ArrowRight') nextSlide();
+    });
+
+    // Handle resize
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            updateCardsPerView();
+            updateSlider(false);
+        }, 250);
+    });
+
+    // Initialize
+    updateCardsPerView();
+    createDots();
+    updateSlider(false); // No transition on initial load
+};
+
+// Initialize slider when DOM is ready
+initCertificationsSlider();
+
 // ===== CONSOLE ART =====
 console.log(`
 ╔══════════════════════════════════════════════════════════════╗

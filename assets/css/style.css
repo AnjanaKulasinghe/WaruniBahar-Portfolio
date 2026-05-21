@@ -500,6 +500,16 @@ body.menu-open {
     margin: 2rem 0;
 }
 
+.hero-opportunity-line {
+    margin-top: -0.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--cyber-green);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
 .btn-primary,
 .btn-secondary {
     display: inline-flex;
@@ -849,6 +859,54 @@ section {
     margin-top: 3rem;
 }
 
+.about-mini-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin: 2.5rem 0 1rem;
+}
+
+.mini-panel {
+    padding: 1.5rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.mini-panel:hover {
+    border-color: var(--cyber-green);
+    box-shadow: 0 0 20px var(--cyber-green-glow);
+    transform: translateY(-4px);
+}
+
+.mini-panel-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    color: var(--cyber-green);
+    margin-bottom: 1rem;
+    letter-spacing: 0.06em;
+}
+
+.mini-panel-list {
+    list-style: none;
+    display: grid;
+    gap: 0.75rem;
+}
+
+.mini-panel-list li {
+    color: var(--text-secondary);
+    position: relative;
+    padding-left: 1rem;
+}
+
+.mini-panel-list li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--cyber-purple);
+}
+
 .highlight-item {
     display: flex;
     gap: 1.5rem;
@@ -887,6 +945,39 @@ section {
 .highlight-content p {
     color: var(--text-secondary);
     line-height: 1.6;
+}
+
+.highlight-subsection {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 255, 65, 0.12);
+}
+
+.highlight-subtitle {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    color: var(--cyber-green);
+    margin-bottom: 0.85rem;
+    letter-spacing: 0.05em;
+}
+
+.highlight-sublist {
+    list-style: none;
+    display: grid;
+    gap: 0.6rem;
+}
+
+.highlight-sublist li {
+    color: var(--text-secondary);
+    position: relative;
+    padding-left: 1rem;
+}
+
+.highlight-sublist li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--cyber-purple);
 }
 
 /* ===== SKILLS SECTION ===== */
@@ -1783,6 +1874,10 @@ section {
         order: 3;
     }
 
+    .hero-opportunity-line {
+        font-size: 0.9rem;
+    }
+
     .hero-actions a:nth-child(1),
     .hero-actions a:nth-child(2) {
         display: none;
@@ -1795,6 +1890,10 @@ section {
 
     .hero-stats {
         order: 4;
+    }
+
+    .about-mini-grid {
+        grid-template-columns: 1fr;
     }
 
     .security-shield {

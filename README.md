@@ -1,251 +1,122 @@
-# Waruni Bahar - Cybersecurity & Cloud Portfolio
+# Waruni Bahar — Portfolio
 
-[![Live Site](https://img.shields.io/badge/Live%20Site-genibahar.com-00ff41?style=for-the-badge&logo=google-chrome&logoColor=white)](https://genibahar.com)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Cybersecurity%20%26%20Cloud-a855f7?style=for-the-badge)](https://genibahar.com)
+Personal portfolio website for Waruni Bahar, a security-focused IT professional with a background in QA engineering and hands-on project work across AWS, Microsoft Azure and Fortinet.
 
-A modern, cybersecurity-themed portfolio website showcasing expertise in QA Engineering, Cybersecurity, and Cloud Computing.
+Live site: <https://genibahar.com>
 
-**Live at: [genibahar.com](https://genibahar.com)**
+## Overview
 
-## 🌟 Features
+A single-page static portfolio built with plain HTML, CSS and JavaScript. It presents an about section, technical skills, certifications and learning history, work experience, project deliverables (briefs, reports, presentations and demo videos) and contact information.
 
-- **Cyber-themed Design**: Matrix-inspired aesthetic with neon green and purple accents
-- **Particle Animation System**: Dynamic background with interconnected particles
-- **Responsive Design**: Fully optimized for desktop, tablet, and mobile devices
-- **Smooth Animations**: Intersection Observer API for scroll-triggered animations
-- **Custom Cursor**: Enhanced cursor effects on desktop
-- **Glitch Effects**: Cyberpunk-style text glitches
-- **Matrix Rain**: Authentic Matrix-style falling characters
-- **SEO Optimized**: Complete with sitemap, robots.txt, structured data, and meta tags
+The site is hosted on GitHub Pages behind the custom domain `genibahar.com`.
 
-## 🔍 SEO Features
 
-### Included for Google Indexing:
-- ✅ **sitemap.xml** - Complete site structure for search engines
-- ✅ **robots.txt** - Crawling instructions for search bots
-- ✅ **Meta Tags** - Title, description, keywords optimized for search
-- ✅ **Open Graph Tags** - Enhanced social media sharing
-- ✅ **Twitter Card Tags** - Optimized Twitter previews
-- ✅ **JSON-LD Structured Data** - Schema.org Person markup
-- ✅ **Canonical URL** - Prevents duplicate content issues
-- ✅ **Semantic HTML5** - Proper heading hierarchy and structure
-- ✅ **Mobile Responsive** - Mobile-first design (Google ranking factor)
-- ✅ **Fast Loading** - Optimized assets and minimal dependencies
+## Tech Stack
 
-### Google Search Console Setup:
-1. Visit [Google Search Console](https://search.google.com/search-console)
-2. Add property: `genibahar.com`
-3. Verify ownership (DNS or HTML file method)
-4. Submit sitemap: `https://genibahar.com/sitemap.xml`
-5. Request indexing for key pages
-6. Monitor performance and fix any issues
+- HTML5 (semantic markup, JSON-LD structured data)
+- CSS3 (custom properties, grid, media queries)
+- Vanilla JavaScript (no framework, no build step)
+- Canvas API for the background particle system
+- Google Fonts: Orbitron, Rajdhani, Share Tech Mono
 
-### Submit to Search Engines:
-- **Google**: [Submit URL](https://www.google.com/webmasters/tools/submit-url)
-- **Bing**: [Bing Webmaster Tools](https://www.bing.com/webmasters)
-- **Sitemap URL**: `https://genibahar.com/sitemap.xml`
-
-## 🎨 Color Palette
-
-- **Primary**: Cyber Green (#00ff41)
-- **Secondary**: Purple (#a855f7)
-- **Accent**: Magenta (#c026d3)
-- **Background**: Deep Black (#0a0a0a)
-- **Cards**: Dark Gray (#151515)
-
-## 🚀 Quick Start
-
-### Local Development
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/warunibahar/portfolio.git
-   cd portfolio
-   ```
-
-2. Open `index.html` in your browser:
-   - **Option 1**: Double-click the file
-   - **Option 2**: Use a local server (recommended)
-     ```bash
-     # Using Python
-     python -m http.server 8000
-     
-     # Using Node.js (http-server)
-     npx http-server -p 8000
-     ```
-
-3. Visit `http://localhost:8000` in your browser
-
-### GitHub Pages Deployment
-
-1. Push the repository to GitHub:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git branch -M main
-   git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
-   git push -u origin main
-   ```
-
-2. Enable GitHub Pages:
-   - Go to repository Settings → Pages
-   - Source: Deploy from branch
-   - Branch: `main` / `root`
-   - Click Save
-
-3. Your site will be live at: `https://genibahar.com` (custom domain configured)
-
-### Custom Domain Setup
-
-The portfolio is configured to use the custom domain **genibahar.com**.
-
-**DNS Configuration Required:**
-
-At your domain registrar, configure the following DNS records:
-
-**Option 1: Using CNAME (Recommended if supported):**
-```
-Type: CNAME
-Name: @ (or leave blank for root domain)
-Value: YOUR_GITHUB_USERNAME.github.io
-```
-
-**Option 2: Using A Records (For root domain):**
-```
-Type: A
-Name: @ (or leave blank)
-Value: 185.199.108.153
-Value: 185.199.109.153
-Value: 185.199.110.153
-Value: 185.199.111.153
-```
-
-**For www subdomain:**
-```
-Type: CNAME
-Name: www
-Value: YOUR_GITHUB_USERNAME.github.io
-```
-
-**After DNS Configuration:**
-1. Go to GitHub repository Settings → Pages
-2. Under "Custom domain", enter: `genibahar.com`
-3. Click Save
-4. Wait for DNS check to complete (may take up to 48 hours)
-5. Enable "Enforce HTTPS" once DNS is verified
-
-**Note:** The CNAME file is already included in the repository root.
-
-## 📝 Customization Guide
-
-### Personal Information
-
-Edit `index.html` and update:
-
-- **Line 7**: Page title
-- **Lines 53-54**: Name in hero section
-- **Lines 58-60**: Tagline
-- **Lines 104-106**: Social media links
-- **About section**: Your professional background
-- **Skills section**: Add/remove skills and percentages
-- **Experience section**: Update work history
-- **Projects section**: Add your projects
-- **Contact section**: Update email (geniwarunibahar@gmail.com), LinkedIn, and mobile number
-
-### Colors
-
-Edit `assets/css/style.css` and modify CSS variables:
-
-```css
-:root {
-    --cyber-green: #00ff41;
-    --cyber-purple: #a855f7;
-    --cyber-magenta: #c026d3;
-    /* ... other colors */
-}
-```
-
-### Content Sections
-
-To add/remove sections:
-1. Update navigation in `index.html` (lines 44-52)
-2. Add/remove corresponding `<section>` elements
-3. Adjust scroll animations in `assets/js/main.js`
-
-## 📁 Project Structure
+## Project Structure
 
 ```
-WaruniBahar-Portfolio/
-├── index.html              # Main HTML file with SEO meta tags
-├── sitemap.xml             # XML sitemap for search engines
-├── robots.txt              # Search engine crawling rules
-├── README.md               # Documentation
-├── CNAME                   # Custom domain configuration
-├── .gitignore              # Git ignore file
+WaruniBahar_Portfolio/
+├── CNAME                   Custom domain configuration for GitHub Pages
+├── README.md
+├── index.html              Main page with meta tags and JSON-LD
+├── robots.txt              Search engine crawling rules
+├── sitemap.xml             XML sitemap
 └── assets/
     ├── css/
-    │   └── style.css       # Main stylesheet
+    │   └── style.css
+    ├── img/                Profile images, favicons, certification logos
     ├── js/
-    │   ├── particles.js    # Particle animation system
-    │   └── main.js         # Interactive features
-    ├── img/
-    │   └── favicon.ico     # Site favicon
-    └── projects/
-        ├── Project/        # Assignment/project briefs
-        └── Solution/       # Completed solutions (PDF & video)
+    │   ├── main.js         Navigation, scroll behaviour, interactions
+    │   └── particles.js    Canvas particle background
+    ├── projects/
+    │   ├── Project/        Assignment briefs (PDF)
+    │   └── Solution/       Completed reports, presentations and demo videos
+    └── resume/             Downloadable resume assets
 ```
 
-## 🛠️ Technologies Used
+## Running Locally
 
-- **HTML5**: Semantic markup
-- **CSS3**: Modern styling with animations
-- **JavaScript**: Vanilla JS for interactivity
-- **Canvas API**: Particle system
-- **Intersection Observer**: Scroll animations
-- **Google Fonts**: Orbitron, Rajdhani, Share Tech Mono
+No build tooling is required. Serve the folder with any static HTTP server, for example:
 
-## 🎯 Browser Support
+```bash
+# Python 3
+python3 -m http.server 8000
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
+# Node.js
+npx http-server -p 8000
+```
 
-## 📱 Responsive Breakpoints
+Then open <http://localhost:8000> in a browser.
 
-- **Desktop**: 1200px and above
-- **Tablet**: 768px - 1199px
-- **Mobile**: Below 768px
+Opening `index.html` directly via `file://` also works for most content, but a local HTTP server is recommended so that relative paths, fetches and canvas behaviour match production.
 
-## 🔧 Performance Optimization
+## Deployment
 
-- Minimal external dependencies
-- Optimized animations with `requestAnimationFrame`
-- Lazy loading for images (add as needed)
-- Reduced particle count on mobile devices
+The site is deployed via GitHub Pages from the `main` branch.
 
-## 📄 License
+1. Push changes to `main`.
+2. GitHub Pages rebuilds automatically.
+3. The `CNAME` file at the repository root maps the site to `genibahar.com`.
+
+### DNS
+
+DNS is configured at the domain registrar to point `genibahar.com` to GitHub Pages using either a `CNAME` record to `<github-user>.github.io` or the four GitHub Pages `A` records:
+
+```
+185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153
+```
+
+The `www` subdomain is mapped via `CNAME` to `<github-user>.github.io`. HTTPS is enforced from the repository's Pages settings.
+
+## Adding a New Project
+
+1. Place the source files under `assets/projects/`:
+   - Brief PDF in `assets/projects/Project/`
+   - Report, presentation and demo video in `assets/projects/Solution/`
+2. Duplicate an existing `.project-card` block in `index.html` inside `.projects-container`.
+3. Update the title, description, tags and link `href` attributes.
+4. Keep descriptions in a similar length range (~55–70 words) so cards align in the grid.
+
+## Editing Content
+
+Content is edited directly in `index.html`. Key sections:
+
+- Hero, About, Skills, Certifications, Experience, Projects, Contact and Footer are individual `<section>` elements.
+- Colour tokens and layout variables are defined at the top of `assets/css/style.css` under `:root`.
+- The projects grid uses `grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))` and collapses to a single column below 968 px.
+
+## SEO
+
+The following are configured for search engine discovery:
+
+- Primary meta tags (title, description, keywords, author, robots)
+- Canonical URL
+- Open Graph and Twitter Card tags
+- Schema.org `Person` structured data via JSON-LD
+- `sitemap.xml` and `robots.txt` at the repository root
+
+To register the site with Google Search Console, add `genibahar.com` as a property, verify ownership, and submit `https://genibahar.com/sitemap.xml`.
+
+## Browser Support
+
+Latest versions of Chrome, Firefox, Safari and Edge on desktop, plus iOS Safari and Chrome on Android.
+
+## Contact
+
+- Email: geniwarunibahar@gmail.com
+- LinkedIn: <https://www.linkedin.com/in/geniwarunimalibahar/>
+- Location: Auckland, New Zealand
+
+## License
 
 © 2026 Waruni Bahar. All rights reserved.
-
-## 🤝 Contributing
-
-This is a personal portfolio, but feedback is welcome! Feel free to:
-- Report bugs
-- Suggest improvements
-- Share your own implementation
-
-## 📧 Contact
-
-- **Email**: geniwarunibahar@gmail.com
-- **LinkedIn**: [linkedin.com/in/geniwarunimalibahar](https://www.linkedin.com/in/geniwarunimalibahar/)
-- **Mobile**: 022 049 7550
-- **GitHub**: [github.com/warunibahar](https://github.com/warunibahar)
-
----
-
-**Built with 💚 for Cybersecurity and ☁️ for Cloud Computing**
-
-*Securing the digital future, one line of code at a time.*

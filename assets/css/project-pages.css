@@ -1,0 +1,277 @@
+.project-page {
+    --project-panel: #101515;
+    --project-panel-raised: #151b1b;
+    background-color: var(--bg-primary, #0a0a0a);
+    background-image:
+        linear-gradient(rgba(0, 255, 65, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 65, 0.025) 1px, transparent 1px);
+    background-size: 44px 44px;
+    min-height: 100vh;
+}
+
+.project-nav {
+    align-items: center;
+    border-bottom: 1px solid var(--border-color, #2a2a2a);
+    display: flex;
+    gap: 1.5rem;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1180px;
+    padding: 1rem 1.5rem;
+}
+
+.project-brand,
+.project-nav-link {
+    color: var(--text-primary, #e0e0e0);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+
+.project-brand span {
+    color: var(--cyber-green, #00ff41);
+}
+
+.project-nav-link {
+    color: var(--cyber-green, #00ff41);
+    font-family: 'Share Tech Mono', monospace;
+    text-align: right;
+}
+
+.project-nav-link:hover,
+.project-nav-link:focus-visible {
+    color: #b5ffc5;
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+}
+
+.project-main {
+    margin: 0 auto;
+    max-width: 1180px;
+    padding: clamp(2rem, 5vw, 4.5rem) 1.5rem 5rem;
+}
+
+.project-breadcrumbs {
+    color: var(--text-secondary, #b0b0b0);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.85rem;
+    margin-bottom: 2.25rem;
+}
+
+.project-breadcrumbs a {
+    color: var(--cyber-green, #00ff41);
+}
+
+.project-kicker {
+    color: var(--cyber-purple, #a855f7);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    line-height: 1.7;
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+}
+
+.project-title {
+    color: var(--cyber-green, #00ff41);
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(2rem, 5.4vw, 4rem);
+    font-weight: 700;
+    line-height: 1.12;
+    margin: 0;
+    max-width: 1000px;
+    overflow-wrap: anywhere;
+}
+
+.project-lede {
+    color: var(--text-primary, #e0e0e0);
+    font-size: clamp(1.2rem, 2.3vw, 1.55rem);
+    line-height: 1.55;
+    margin: 1.25rem 0 0;
+    max-width: 850px;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    list-style: none;
+    margin: 1.4rem 0 0;
+    padding: 0;
+}
+
+.project-tags li {
+    border: 1px solid var(--border-color, #2a2a2a);
+    border-radius: 999px;
+    color: var(--text-secondary, #b0b0b0);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.8rem;
+    padding: 0.35rem 0.7rem;
+}
+
+.project-facts,
+.project-columns {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 2rem;
+}
+
+.project-fact,
+.project-card {
+    background: var(--project-panel, #101515);
+    border: 1px solid var(--border-color, #2a2a2a);
+    border-radius: 8px;
+    padding: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.project-fact strong,
+.project-eyebrow {
+    color: var(--cyber-green, #00ff41);
+    display: block;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.4rem;
+    text-transform: uppercase;
+}
+
+.project-fact span {
+    color: var(--text-primary, #e0e0e0);
+}
+
+.project-section {
+    margin-top: clamp(2.6rem, 6vw, 4rem);
+}
+
+.project-section h2 {
+    border-bottom: 1px solid var(--border-color, #2a2a2a);
+    color: var(--text-primary, #e0e0e0);
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(1.2rem, 3vw, 1.7rem);
+    font-weight: 700;
+    line-height: 1.35;
+    margin: 0 0 1rem;
+    padding-bottom: 0.7rem;
+}
+
+.project-section p,
+.project-section li {
+    color: var(--text-secondary, #b0b0b0);
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.project-section p + p {
+    margin-top: 0.85rem;
+}
+
+.project-section ul,
+.project-section ol {
+    padding-left: 1.3rem;
+}
+
+.project-section li + li {
+    margin-top: 0.45rem;
+}
+
+.project-figure {
+    background: var(--project-panel, #101515);
+    border: 1px solid var(--border-color, #2a2a2a);
+    border-radius: 8px;
+    margin: 1.5rem 0 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: clamp(0.5rem, 1.5vw, 1rem);
+    scrollbar-color: var(--cyber-green, #00ff41) var(--project-panel, #101515);
+}
+
+.project-figure svg {
+    display: block;
+    height: auto;
+    width: 100%;
+}
+
+.project-figure figcaption {
+    border-top: 1px solid var(--border-color, #2a2a2a);
+    color: var(--text-secondary, #b0b0b0);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-top: 0.5rem;
+    padding: 0.8rem 0.3rem 0.25rem;
+}
+
+.project-figure:focus-visible {
+    outline: 2px solid var(--cyber-green, #00ff41);
+    outline-offset: 3px;
+}
+
+.project-note {
+    border-left: 3px solid var(--cyber-purple, #a855f7);
+    background: var(--project-panel-raised, #151b1b);
+    color: var(--text-secondary, #b0b0b0);
+    margin-top: 1.25rem;
+    padding: 0.9rem 1rem;
+}
+
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+}
+
+.project-link {
+    border: 1px solid var(--cyber-green, #00ff41);
+    border-radius: 4px;
+    color: var(--cyber-green, #00ff41);
+    display: inline-block;
+    font-family: 'Share Tech Mono', monospace;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+}
+
+.project-link:hover,
+.project-link:focus-visible {
+    background: var(--cyber-green, #00ff41);
+    color: #081008;
+}
+
+.project-footer {
+    border-top: 1px solid var(--border-color, #2a2a2a);
+    color: var(--text-secondary, #b0b0b0);
+    font-size: 0.9rem;
+    margin: 0 auto;
+    max-width: 1180px;
+    padding: 1.5rem;
+}
+
+.project-footer a {
+    color: var(--cyber-green, #00ff41);
+}
+
+@media (max-width: 640px) {
+    .project-nav {
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    .project-main {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .project-facts,
+    .project-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .project-nav-link {
+        font-size: 0.78rem;
+    }
+
+    .project-figure img {
+        max-width: none;
+        min-width: 760px;
+    }
+}

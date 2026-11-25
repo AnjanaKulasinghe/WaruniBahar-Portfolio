@@ -1,12 +1,12 @@
 # Waruni Bahar — Portfolio
 
-Personal portfolio website for Waruni Bahar, a security-focused IT professional with a background in QA engineering and hands-on project work across AWS, Microsoft Azure and Fortinet.
+Personal portfolio website for Geni Waruni Bahar (Waruni Bahar), sharing her story, interests, education, experience and verified project work across software quality assurance, cloud and cybersecurity.
 
 Live site: <https://genibahar.com>
 
 ## Overview
 
-A single-page static portfolio built with plain HTML, CSS and JavaScript. It presents an about section, technical skills, certifications and learning history, work experience, project deliverables (briefs, reports, presentations and demo videos) and contact information.
+A static portfolio built with plain HTML, CSS and JavaScript. The homepage introduces Waruni and her path; three accessible project case-study pages give more context to selected academic AWS/network security work. The site also presents skills, certifications, learning history, experience, source deliverables and contact details.
 
 The site is hosted on GitHub Pages behind the custom domain `genibahar.com`.
 
@@ -17,7 +17,7 @@ The site is hosted on GitHub Pages behind the custom domain `genibahar.com`.
 - CSS3 (custom properties, grid, media queries)
 - Vanilla JavaScript (no framework, no build step)
 - Canvas API for the background particle system
-- Google Fonts: Orbitron, Rajdhani, Share Tech Mono
+- Self-hosted Orbitron, Rajdhani and Share Tech Mono fonts (SIL Open Font License files are included in `assets/fonts/`)
 
 ## Project Structure
 
@@ -25,13 +25,17 @@ The site is hosted on GitHub Pages behind the custom domain `genibahar.com`.
 WaruniBahar_Portfolio/
 ├── CNAME                   Custom domain configuration for GitHub Pages
 ├── README.md
-├── index.html              Main page with meta tags and JSON-LD
+├── index.html              Main portfolio page with meta tags and JSON-LD
+├── projects/               Three source-checked, static project case studies
 ├── robots.txt              Search engine crawling rules
 ├── sitemap.xml             XML sitemap
+├── scripts/
+│   └── check_seo.py         Dependency-free static SEO and link checks
+├── .github/seo/             SEO audit, strategy, growth plan and checklist
 └── assets/
-    ├── css/
-    │   └── style.css
-    ├── img/                Profile images, favicons, certification logos
+    ├── css/                Main and project-page stylesheets
+    ├── fonts/              Local WOFF2 fonts and SIL OFL license files
+    ├── img/                Profile variants, social preview, diagrams and certification logos
     ├── js/
     │   ├── main.js         Navigation, scroll behaviour, interactions
     │   └── particles.js    Canvas particle background
@@ -97,15 +101,17 @@ Content is edited directly in `index.html`. Key sections:
 
 ## SEO
 
-The following are configured for search engine discovery:
+SEO uses unique canonical metadata for the homepage and each project story, Open Graph and Twitter previews, and JSON-LD describing the person, site, and visible project articles. The sitemap lists all four canonical public pages; `robots.txt` allows crawling and declares the sitemap.
 
-- Primary meta tags (title, description, keywords, author, robots)
-- Canonical URL
-- Open Graph and Twitter Card tags
-- Schema.org `Person` structured data via JSON-LD
-- `sitemap.xml` and `robots.txt` at the repository root
+Run the dependency-free SEO regression check with:
 
-To register the site with Google Search Console, add `genibahar.com` as a property, verify ownership, and submit `https://genibahar.com/sitemap.xml`.
+```bash
+python3 scripts/check_seo.py
+```
+
+The check also runs on relevant pushes and pull requests through GitHub Actions. See [`.github/seo/`](.github/seo/) for the audit, keyword and growth strategy, implementation report and reusable page checklist. The dot-directory keeps these repository documents out of the GitHub Pages site output.
+
+To monitor search visibility, verify `genibahar.com` in Google Search Console and Bing Webmaster Tools, submit `https://genibahar.com/sitemap.xml`, then review indexing, queries, links and field Core Web Vitals. Account verification and any analytics IDs must be configured by the site owner; none are committed to this repository. Local Lighthouse results and production follow-up are documented in [`.github/seo/SEO-REPORT.md`](.github/seo/SEO-REPORT.md). Changes here have not been deployed.
 
 ## Browser Support
 

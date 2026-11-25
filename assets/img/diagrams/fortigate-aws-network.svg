@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">Conceptual AWS VPC with FortiGate network security</title>
+  <desc id="desc">Internet traffic reaches an AWS public subnet through an Internet Gateway and FortiGate firewall. Private subnets in separate availability zones route outbound traffic through FortiGate. A scheduled Lambda function starts and stops the firewall for the lab's working hours.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#00ff41"/></marker>
+    <marker id="muted-arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#a855f7"/></marker>
+    <style>
+      .bg{fill:#101515}.frame{fill:#111a19;stroke:#00ff41;stroke-width:2}.zone{fill:#151b1b;stroke:#40504b;stroke-width:1.5}.node{fill:#0a0a0a;stroke:#00ff41;stroke-width:2}.control{fill:#171220;stroke:#a855f7;stroke-width:2}.label{fill:#e0e0e0;font:24px 'Rajdhani',sans-serif}.small{fill:#b0b0b0;font:18px 'Rajdhani',sans-serif}.green{fill:#00ff41;font:22px 'Share Tech Mono',monospace}.purple{fill:#caa5ff;font:20px 'Share Tech Mono',monospace}.line{fill:none;stroke:#00ff41;stroke-width:3;marker-end:url(#arrow)}.dash{fill:none;stroke:#a855f7;stroke-width:2.5;stroke-dasharray:8 7;marker-end:url(#muted-arrow)}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="560" rx="18"/>
+  <text class="green" x="40" y="48">CONCEPTUAL LAB ARCHITECTURE · NOT TO SCALE</text>
+  <rect class="frame" x="34" y="80" width="1128" height="430" rx="18"/>
+  <text class="green" x="60" y="116">AWS CUSTOM VPC</text>
+  <rect class="zone" x="62" y="144" width="370" height="300" rx="14"/>
+  <text class="purple" x="88" y="180">PUBLIC SUBNET</text>
+  <rect class="node" x="92" y="220" width="126" height="92" rx="10"/>
+  <text class="label" x="113" y="258">Internet</text><text class="small" x="116" y="286">Gateway</text>
+  <rect class="node" x="260" y="204" width="142" height="124" rx="10"/>
+  <text class="green" x="281" y="244">FortiGate</text><text class="small" x="280" y="274">firewall + ENIs</text><text class="small" x="282" y="302">route control</text>
+  <path class="line" d="M218 265H254"/>
+  <rect class="zone" x="472" y="144" width="458" height="300" rx="14"/>
+  <text class="purple" x="500" y="180">PRIVATE SUBNETS · SEPARATE AZs</text>
+  <rect class="node" x="510" y="220" width="166" height="104" rx="10"/>
+  <text class="label" x="538" y="261">Internal</text><text class="small" x="550" y="290">resources</text>
+  <rect class="node" x="724" y="220" width="166" height="104" rx="10"/>
+  <text class="label" x="753" y="261">Internal</text><text class="small" x="764" y="290">resources</text>
+  <path class="line" d="M402 265H504"/>
+  <path class="line" d="M402 300C470 374 666 375 719 302"/>
+  <text class="small" x="487" y="414">private routes pass through firewall</text>
+  <rect class="control" x="970" y="184" width="158" height="148" rx="12"/>
+  <text class="purple" x="997" y="224">SCHEDULE</text>
+  <text class="label" x="1000" y="263">AWS Lambda</text>
+  <text class="small" x="1002" y="292">start / stop</text>
+  <path class="dash" d="M970 266H908"/>
+  <text class="small" x="974" y="374">Lab hours:</text><text class="small" x="974" y="400">9am–5pm NZT</text>
+  <text class="small" x="62" y="478">Security groups and FortiGate policies add separate access-control layers.</text>
+</svg>

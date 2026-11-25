@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FortiGate Network Security in AWS | Geni Waruni Bahar</title>
+    <meta name="description" content="Geni Waruni Bahar's individual academic FortiGate-in-AWS project explores VPC segmentation, firewall routing, ENIs and scheduled Lambda operations.">
+    <meta name="author" content="Geni Waruni Bahar">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://genibahar.com/projects/fortigate-in-aws.html">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://genibahar.com/projects/fortigate-in-aws.html">
+    <meta property="og:title" content="FortiGate Network Security in AWS | Geni Waruni Bahar">
+    <meta property="og:description" content="An individual academic project exploring FortiGate routing, AWS network segmentation and scheduled firewall operations.">
+    <meta property="og:image" content="https://genibahar.com/assets/img/waruni-bahar-cybersecurity-cloud-security-profile.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="1420">
+    <meta property="og:image:alt" content="Geni Waruni Bahar, cybersecurity and cloud security professional">
+    <meta property="og:site_name" content="Geni Waruni Bahar Portfolio">
+    <meta property="og:locale" content="en_NZ">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FortiGate Network Security in AWS | Geni Waruni Bahar">
+    <meta name="twitter:description" content="An individual academic project exploring FortiGate routing, AWS network segmentation and scheduled firewall operations.">
+    <meta name="twitter:image" content="https://genibahar.com/assets/img/waruni-bahar-cybersecurity-cloud-security-profile.jpg">
+    <meta name="twitter:image:alt" content="Geni Waruni Bahar, cybersecurity and cloud security professional">
+    <link rel="icon" type="image/png" sizes="180x180" href="../assets/img/waruni-bahar-profile-icon.png">
+    <link rel="preload" href="../assets/fonts/Orbitron.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../assets/fonts/ShareTechMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/project-pages.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://genibahar.com/#website",
+          "url": "https://genibahar.com/",
+          "name": "Geni Waruni Bahar",
+          "inLanguage": "en-NZ"
+        },
+        {
+          "@type": "TechArticle",
+          "@id": "https://genibahar.com/projects/fortigate-in-aws.html#article",
+          "url": "https://genibahar.com/projects/fortigate-in-aws.html",
+          "headline": "FortiGate Network Security in AWS",
+          "description": "An individual academic project exploring FortiGate routing, AWS network segmentation, network interfaces and scheduled firewall operations.",
+          "inLanguage": "en-NZ",
+          "author": { "@id": "https://genibahar.com/#person" },
+          "isPartOf": { "@id": "https://genibahar.com/#website" },
+          "mainEntityOfPage": "https://genibahar.com/projects/fortigate-in-aws.html",
+          "about": [
+            { "@type": "Thing", "name": "AWS VPC network segmentation" },
+            { "@type": "Thing", "name": "FortiGate firewall routing" },
+            { "@type": "Thing", "name": "AWS Lambda scheduling" }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://genibahar.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://genibahar.com/#projects" },
+            { "@type": "ListItem", "position": 3, "name": "FortiGate Network Security in AWS", "item": "https://genibahar.com/projects/fortigate-in-aws.html" }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body class="project-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="project-nav">
+        <a class="project-brand" href="../">GENI WARUNI <span>BAHAR</span></a>
+        <a class="project-nav-link" href="../#projects">← All projects</a>
+    </header>
+
+    <main class="project-main" id="main-content">
+        <nav class="project-breadcrumbs" aria-label="Breadcrumb">
+            <a href="../">Home</a> / <a href="../#projects">Projects</a> / FortiGate in AWS
+        </nav>
+
+        <article>
+            <header>
+                <p class="project-kicker">Individual academic project · CCC603 · Cloud Cyber Security</p>
+                <h1 class="project-title">FortiGate Network Security in AWS</h1>
+                <p class="project-lede">A hands-on cloud networking study in routing private subnet traffic through a FortiGate firewall and understanding how network design shapes security.</p>
+                <ul class="project-tags" aria-label="Project topics">
+                    <li>AWS VPC</li><li>FortiGate</li><li>Network segmentation</li><li>Firewall routing</li><li>AWS Lambda</li>
+                </ul>
+                <div class="project-facts">
+                    <div class="project-fact"><strong>Project context</strong><span>Individual Level 6 diploma assessment</span></div>
+                    <div class="project-fact"><strong>Focus</strong><span>Cloud network controls and operational learning</span></div>
+                </div>
+            </header>
+
+            <section class="project-section" aria-labelledby="overview-heading">
+                <h2 id="overview-heading">The question behind the project</h2>
+                <p>How can a cloud network keep internal resources away from direct internet exposure while still allowing deliberate, inspectable traffic paths? I explored that question by designing a segmented AWS VPC and placing FortiGate at the network boundary for the lab.</p>
+                <p>The work combined architecture planning, AWS configuration, firewall access, scheduled operations and a written risk and continuity review. It is an academic proof of concept, not a production firewall deployment.</p>
+            </section>
+
+            <section class="project-section" aria-labelledby="architecture-heading">
+                <h2 id="architecture-heading">Architecture and traffic flow</h2>
+                <p>The report describes a custom VPC with a public subnet for FortiGate and private subnets across availability zones for internal resources. Public-subnet traffic uses an Internet Gateway; private-subnet routes direct traffic through FortiGate for inspection. Network interfaces and AWS Security Groups provide additional control points alongside FortiGate policies.</p>
+                <figure class="project-figure" tabindex="0" aria-label="Scrollable AWS and FortiGate architecture diagram">
+                    <img src="../assets/img/diagrams/fortigate-aws-network.svg" alt="Conceptual AWS VPC: Internet Gateway and a public FortiGate firewall route traffic to private subnets in separate availability zones; a scheduled Lambda function starts and stops the firewall during lab hours." width="1200" height="560" decoding="async">
+                    <figcaption>Conceptual diagram based on the assessment report; it omits resource identifiers, exact network ranges and account-specific settings.</figcaption>
+                </figure>
+            </section>
+
+            <div class="project-columns">
+                <section class="project-card" aria-labelledby="implementation-heading">
+                    <p class="project-eyebrow">Implementation explored</p>
+                    <h2 id="implementation-heading">From subnet plan to firewall</h2>
+                    <ul>
+                        <li>Created a custom AWS VPC and separated public and private subnets.</li>
+                        <li>Attached FortiGate network interfaces and configured source/destination-check behavior for routing.</li>
+                        <li>Directed private-subnet routes through FortiGate and used security groups with firewall rules.</li>
+                        <li>Used AWS Lambda to schedule FortiGate start and stop during the lab’s stated working hours.</li>
+                    </ul>
+                </section>
+                <section class="project-card" aria-labelledby="security-heading">
+                    <p class="project-eyebrow">Security and continuity</p>
+                    <h2 id="security-heading">What I considered</h2>
+                    <ul>
+                        <li>Keeping internal workloads off direct public routes and limiting access to required ports and trusted sources.</li>
+                        <li>Considering logging, monitoring and cost implications of a pay-as-you-go firewall instance.</li>
+                        <li>Identifying configuration errors, overly broad security groups, license status and monitoring gaps as risks.</li>
+                        <li>Documenting active-passive high availability, Infrastructure as Code and richer monitoring as future work; these were recommendations, not implemented project results.</li>
+                    </ul>
+                </section>
+            </div>
+
+            <section class="project-section" aria-labelledby="validation-heading">
+                <h2 id="validation-heading">What I validated</h2>
+                <p>The assessment records access to FortiGate through its assigned public endpoint and a successful ping test from its command line to confirm internet connectivity. That test checked basic connectivity and routing; it does not establish full threat-detection coverage, high availability or production readiness.</p>
+                <p>The reflection also notes a key platform constraint: a FortiGate instance and its elastic network interfaces belong to one availability zone, which affects how interfaces can be arranged across a multi-zone network.</p>
+            </section>
+
+            <section class="project-section" aria-labelledby="learning-heading">
+                <h2 id="learning-heading">What stayed with me</h2>
+                <p>This project made routing feel less abstract. A subnet boundary only helps when the route tables, firewall policy, interfaces and cloud security groups work together as intended. I came away more attentive to tracing a packet’s path one control at a time.</p>
+                <p>It also made the boundary between a working lab and a resilient service clearer: high availability, repeatable infrastructure, alerting and configuration backup need their own design and verification.</p>
+            </section>
+
+            <div class="project-links">
+                <a class="project-link" href="../#project-fortinet-network-security">View project materials on the portfolio</a>
+                <a class="project-link" href="../#about">More about Geni Waruni Bahar</a>
+            </div>
+        </article>
+    </main>
+
+    <footer class="project-footer">© 2026 Geni Waruni Bahar · <a href="../">Return to the portfolio</a></footer>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS Site-to-Site VPN Lab | Geni Waruni Bahar</title>
+    <meta name="description" content="An individual AWS networking lab by Geni Waruni Bahar connecting two regional VPCs with an IKE and IPsec site-to-site VPN and private-IP testing.">
+    <meta name="author" content="Geni Waruni Bahar">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://genibahar.com/projects/aws-site-to-site-vpn.html">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://genibahar.com/projects/aws-site-to-site-vpn.html">
+    <meta property="og:title" content="AWS Site-to-Site VPN Lab | Geni Waruni Bahar">
+    <meta property="og:description" content="An individual academic lab on an AWS site-to-site VPN, IKE/IPsec tunnel configuration and private-address connectivity validation.">
+    <meta property="og:image" content="https://genibahar.com/assets/img/waruni-bahar-cybersecurity-cloud-security-profile.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="1420">
+    <meta property="og:image:alt" content="Geni Waruni Bahar, cybersecurity and cloud security professional">
+    <meta property="og:site_name" content="Geni Waruni Bahar Portfolio">
+    <meta property="og:locale" content="en_NZ">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AWS Site-to-Site VPN Lab | Geni Waruni Bahar">
+    <meta name="twitter:description" content="An individual academic lab on an AWS site-to-site VPN, IKE/IPsec tunnel configuration and private-address connectivity validation.">
+    <meta name="twitter:image" content="https://genibahar.com/assets/img/waruni-bahar-cybersecurity-cloud-security-profile.jpg">
+    <meta name="twitter:image:alt" content="Geni Waruni Bahar, cybersecurity and cloud security professional">
+    <link rel="icon" type="image/png" sizes="180x180" href="../assets/img/waruni-bahar-profile-icon.png">
+    <link rel="preload" href="../assets/fonts/Orbitron.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../assets/fonts/ShareTechMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/project-pages.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://genibahar.com/#website",
+          "url": "https://genibahar.com/",
+          "name": "Geni Waruni Bahar",
+          "inLanguage": "en-NZ"
+        },
+        {
+          "@type": "TechArticle",
+          "@id": "https://genibahar.com/projects/aws-site-to-site-vpn.html#article",
+          "url": "https://genibahar.com/projects/aws-site-to-site-vpn.html",
+          "headline": "AWS Site-to-Site VPN Lab",
+          "description": "An individual academic lab connecting two regional VPCs with a site-to-site VPN and testing private-address connectivity.",
+          "inLanguage": "en-NZ",
+          "author": { "@id": "https://genibahar.com/#person" },
+          "isPartOf": { "@id": "https://genibahar.com/#website" },
+          "mainEntityOfPage": "https://genibahar.com/projects/aws-site-to-site-vpn.html",
+          "about": [
+            { "@type": "Thing", "name": "AWS site-to-site VPN" },
+            { "@type": "Thing", "name": "IKE and IPsec" },
+            { "@type": "Thing", "name": "Cloud network security" }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://genibahar.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://genibahar.com/#projects" },
+            { "@type": "ListItem", "position": 3, "name": "AWS Site-to-Site VPN Lab", "item": "https://genibahar.com/projects/aws-site-to-site-vpn.html" }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body class="project-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="project-nav">
+        <a class="project-brand" href="../">GENI WARUNI <span>BAHAR</span></a>
+        <a class="project-nav-link" href="../#projects">← All projects</a>
+    </header>
+
+    <main class="project-main" id="main-content">
+        <nav class="project-breadcrumbs" aria-label="Breadcrumb">
+            <a href="../">Home</a> / <a href="../#projects">Projects</a> / AWS site-to-site VPN
+        </nav>
+
+        <article>
+            <header>
+                <p class="project-kicker">Individual academic project · CCC603 · Secure networking lab</p>
+                <h1 class="project-title">An AWS Site-to-Site VPN Between Regions</h1>
+                <p class="project-lede">A networking lab that helped me understand the parts behind a private connection: gateway roles, tunnel negotiation, address selection and testing the path rather than just the endpoint.</p>
+                <ul class="project-tags" aria-label="Project topics">
+                    <li>AWS VPC</li><li>Site-to-site VPN</li><li>IKE</li><li>IPsec</li><li>Libreswan</li>
+                </ul>
+                <div class="project-facts">
+                    <div class="project-fact"><strong>Project context</strong><span>Individual Level 6 diploma assessment</span></div>
+                    <div class="project-fact"><strong>Scenario</strong><span>Two isolated regions in an academic banking-network exercise</span></div>
+                </div>
+            </header>
+
+            <section class="project-section" aria-labelledby="overview-heading">
+                <h2 id="overview-heading">The question behind the project</h2>
+                <p>The coursework asked me to connect two isolated AWS VPC environments representing Sydney and Singapore in a fictional banking scenario. I wanted to understand how the AWS-managed VPN endpoint and a software customer gateway fit together, and how to verify that internal traffic used the tunnel.</p>
+                <p>This is an individual lab and assessment scenario. It was not a deployment for a bank, a live financial environment or a production service.</p>
+            </section>
+
+            <section class="project-section" aria-labelledby="architecture-heading">
+                <h2 id="architecture-heading">Architecture and traffic flow</h2>
+                <p>The Sydney VPC used an AWS Virtual Private Gateway. In Singapore, an EC2 instance running Libreswan acted as the Customer Gateway. The two endpoints negotiated an IKE/IPsec tunnel. Private-address SSH between instances was the connectivity check described in the report.</p>
+                <figure class="project-figure" tabindex="0" aria-label="Scrollable AWS site-to-site VPN architecture diagram">
+                    <img src="../assets/img/diagrams/aws-cross-region-vpn.svg" alt="Conceptual diagram of a Sydney AWS VPC with a Virtual Private Gateway connected through an IKE and IPsec tunnel to a Singapore EC2 instance running Libreswan as the customer gateway; private-IP SSH tests cross the tunnel." width="1200" height="480" decoding="async">
+                    <figcaption>Conceptual view of the assessed lab; region names describe the exercise, not a current production network.</figcaption>
+                </figure>
+            </section>
+
+            <div class="project-columns">
+                <section class="project-card" aria-labelledby="build-heading">
+                    <p class="project-eyebrow">Implementation explored</p>
+                    <h2 id="build-heading">Building the tunnel</h2>
+                    <ul>
+                        <li>Created separate VPCs with non-overlapping address spaces for the two regions.</li>
+                        <li>Attached an AWS Virtual Private Gateway on the Sydney side and configured the remote gateway on an EC2 instance in Singapore.</li>
+                        <li>Installed and configured Libreswan, including IKE/IPsec settings and a shared secret kept out of this public case study.</li>
+                        <li>Selected AES encryption in the report and configured the VPN service to restart if the connection dropped.</li>
+                    </ul>
+                </section>
+                <section class="project-card" aria-labelledby="safety-heading">
+                    <p class="project-eyebrow">Boundaries and safety</p>
+                    <h2 id="safety-heading">What the lab did not prove</h2>
+                    <ul>
+                        <li>The report says one of the two AWS-provided tunnels was mainly configured for this demonstration; it does not verify full failover behaviour.</li>
+                        <li>The scenario and its connectivity checks do not establish production hardening, capacity, monitoring coverage or a security certification.</li>
+                        <li>The public article omits host addresses, keys, student identifiers and account-specific configuration.</li>
+                    </ul>
+                </section>
+            </div>
+
+            <section class="project-section" aria-labelledby="validation-heading">
+                <h2 id="validation-heading">Testing and learning</h2>
+                <p>The report records the tunnel reaching an “ESTABLISHED” state with active IKE and IPsec Security Associations. It also records a successful SSH connection between the instances over their private IP addresses, and that a public-IP access attempt was blocked by the security-group setup.</p>
+                <p>One useful debugging lesson came from using the wrong endpoint identifier: the tunnel did not establish until I corrected the configuration to use the public Elastic IP. It reinforced the value of checking each endpoint and route systematically before changing multiple settings at once.</p>
+                <aside class="project-note">The report describes a shared-key configuration. No key value, host address or credential is included here.</aside>
+            </section>
+
+            <section class="project-section" aria-labelledby="next-heading">
+                <h2 id="next-heading">Questions I would explore next</h2>
+                <p>The assessment discusses two-tunnel redundancy and automatic recovery as resilience concepts. The demonstration focused on one tunnel, so a useful next lab would test failover, tunnel monitoring and recovery with controlled conditions and documented evidence.</p>
+            </section>
+
+            <div class="project-links">
+                <a class="project-link" href="../#project-aws-security-iam">View project materials on the portfolio</a>
+                <a class="project-link" href="../#about">More about Geni Waruni Bahar</a>
+            </div>
+        </article>
+    </main>
+
+    <footer class="project-footer">© 2026 Geni Waruni Bahar · <a href="../">Return to the portfolio</a></footer>
+</body>
+</html>

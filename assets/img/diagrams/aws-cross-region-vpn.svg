@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" role="img" aria-labelledby="title desc">
+  <title id="title">Academic AWS site-to-site VPN between Sydney and Singapore</title>
+  <desc id="desc">Two isolated AWS VPCs represent Sydney and Singapore in a course scenario. An AWS Virtual Private Gateway in Sydney connects through an IKE and IPsec tunnel to a Libreswan customer gateway running on an EC2 instance in Singapore. SSH over private IPs was used for a connectivity test.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#00ff41"/></marker>
+    <style>
+      .bg{fill:#101515}.frame{fill:#111a19;stroke:#00ff41;stroke-width:2}.node{fill:#0a0a0a;stroke:#00ff41;stroke-width:2}.vpn{fill:#171220;stroke:#a855f7;stroke-width:2}.label{fill:#e0e0e0;font:25px 'Rajdhani',sans-serif}.small{fill:#b0b0b0;font:18px 'Rajdhani',sans-serif}.green{fill:#00ff41;font:21px 'Share Tech Mono',monospace}.purple{fill:#d2b1ff;font:20px 'Share Tech Mono',monospace}.line{fill:none;stroke:#00ff41;stroke-width:3;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="480" rx="18"/>
+  <text class="green" x="38" y="44">INDIVIDUAL ACADEMIC LAB · CONCEPTUAL DIAGRAM · NOT TO SCALE</text>
+  <rect class="frame" x="38" y="86" width="410" height="300" rx="16"/>
+  <text class="green" x="66" y="126">AWS REGION · SYDNEY</text>
+  <rect class="node" x="78" y="166" width="154" height="92" rx="10"/>
+  <text class="label" x="100" y="206">EC2 host</text><text class="small" x="103" y="234">private subnet</text>
+  <rect class="node" x="270" y="166" width="140" height="92" rx="10"/>
+  <text class="label" x="288" y="206">AWS VGW</text><text class="small" x="290" y="234">VPN endpoint</text>
+  <path class="line" d="M232 212H264"/>
+  <rect class="frame" x="752" y="86" width="410" height="300" rx="16"/>
+  <text class="green" x="780" y="126">AWS REGION · SINGAPORE</text>
+  <rect class="node" x="790" y="166" width="166" height="92" rx="10"/>
+  <text class="label" x="814" y="206">EC2 host</text><text class="small" x="818" y="234">private subnet</text>
+  <rect class="node" x="988" y="166" width="146" height="92" rx="10"/>
+  <text class="label" x="1004" y="206">Libreswan</text><text class="small" x="1003" y="234">customer gateway</text>
+  <path class="line" d="M956 212H982"/>
+  <path d="M410 212H790" fill="none" stroke="#a855f7" stroke-width="5" stroke-dasharray="12 8"/>
+  <text class="purple" x="514" y="188">IKE + IPsec</text>
+  <text class="small" x="500" y="242">encrypted site-to-site tunnel</text>
+  <text class="small" x="377" y="286">tunnel state recorded as ESTABLISHED</text>
+  <text class="green" x="170" y="350">private-IP SSH test</text>
+  <text class="green" x="883" y="350">private-IP SSH test</text>
+  <path class="line" d="M234 336C360 420 830 420 988 336"/>
+</svg>

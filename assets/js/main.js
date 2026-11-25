@@ -10,26 +10,29 @@ const navbar = document.getElementById('navbar');
 // Toggle mobile menu
 if (hamburger && navLinks && menuBackdrop) {
     hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        menuBackdrop.classList.toggle('active');
-        document.body.classList.toggle('menu-open');
+        const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+        navLinks.classList.toggle('active', !isExpanded);
+        menuBackdrop.classList.toggle('active', !isExpanded);
+        document.body.classList.toggle('menu-open', !isExpanded);
+        hamburger.setAttribute('aria-expanded', String(!isExpanded));
+        hamburger.setAttribute('aria-label', isExpanded ? 'Open navigation menu' : 'Close navigation menu');
     });
 
-    // Close menu when backdrop is clicked
-    menuBackdrop.addEventListener('click', () => {
+    const closeMobileMenu = () => {
         navLinks.classList.remove('active');
         menuBackdrop.classList.remove('active');
         document.body.classList.remove('menu-open');
-    });
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.setAttribute('aria-label', 'Open navigation menu');
+    };
+
+    // Close menu when backdrop is clicked
+    menuBackdrop.addEventListener('click', closeMobileMenu);
 
     // Close menu when a link is clicked
     const allNavLinks = navLinks.querySelectorAll('a');
     allNavLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            menuBackdrop.classList.remove('active');
-            document.body.classList.remove('menu-open');
-        });
+        link.addEventListener('click', closeMobileMenu);
     });
 }
 

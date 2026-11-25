@@ -1,3 +1,52 @@
+/* Third-party typefaces are self-hosted under their upstream SIL Open Font Licenses. */
+@font-face {
+    font-family: 'Orbitron';
+    src: url('../fonts/Orbitron.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 400 900;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rajdhani';
+    src: url('../fonts/Rajdhani-Regular.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rajdhani';
+    src: url('../fonts/Rajdhani-Medium.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rajdhani';
+    src: url('../fonts/Rajdhani-SemiBold.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rajdhani';
+    src: url('../fonts/Rajdhani-Bold.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Share Tech Mono';
+    src: url('../fonts/ShareTechMono-Regular.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
 /* ===== CYBER SECURITY THEME - COLOR PALETTE ===== */
 :root {
     --bg-primary: #0a0a0a;
@@ -133,6 +182,21 @@ body.menu-open {
 }
 
 /* ===== NAVIGATION ===== */
+.skip-link {
+    position: absolute;
+    top: -5rem;
+    left: 1rem;
+    z-index: 2000;
+    padding: 0.75rem 1rem;
+    background: var(--bg-secondary);
+    color: var(--cyber-green);
+    border: 1px solid var(--cyber-green);
+}
+
+.skip-link:focus {
+    top: 1rem;
+}
+
 .navbar {
     position: fixed;
     top: 0;
@@ -174,6 +238,10 @@ body.menu-open {
     flex-direction: column;
     cursor: pointer;
     z-index: 1001;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    color: inherit;
 }
 
 .hamburger span {

@@ -1,0 +1,42 @@
+name: SEO checks
+
+on:
+  push:
+    paths:
+      - "index.html"
+      - "robots.txt"
+      - "sitemap.xml"
+      - "assets/img/**"
+      - "assets/css/**"
+      - "assets/js/**"
+      - "scripts/check_seo.py"
+      - ".github/seo/**"
+      - ".github/workflows/seo.yml"
+  pull_request:
+    paths:
+      - "index.html"
+      - "robots.txt"
+      - "sitemap.xml"
+      - "assets/img/**"
+      - "assets/css/**"
+      - "assets/js/**"
+      - "scripts/check_seo.py"
+      - ".github/seo/**"
+      - ".github/workflows/seo.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  static-seo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Validate static SEO signals
+        run: |
+          python scripts/check_seo.py
+          node --check assets/js/main.js
+          node --check assets/js/particles.js

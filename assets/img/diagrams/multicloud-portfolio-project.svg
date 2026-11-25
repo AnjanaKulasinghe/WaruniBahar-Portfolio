@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
+  <title id="title">Group academic multi-cloud WordPress security architecture</title>
+  <desc id="desc">The course scenario hosts WordPress in AWS behind an Application Load Balancer and EC2 Auto Scaling, with Amazon RDS as the database. Azure provides DNS and identity governance. FortiGate and VPN controls support cross-cloud traffic. Lambda schedules EBS snapshots; S3 backup storage, monitoring and notifications are separate services.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#00ff41"/></marker>
+    <marker id="purple-arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#a855f7"/></marker>
+    <style>
+      .bg{fill:#101515}.aws{fill:#101b18;stroke:#00ff41;stroke-width:2}.azure{fill:#111925;stroke:#60a5fa;stroke-width:2}.node{fill:#0a0a0a;stroke:#43534d;stroke-width:1.5}.green-node{fill:#0d1713;stroke:#00ff41;stroke-width:2}.purple-node{fill:#171220;stroke:#a855f7;stroke-width:2}.label{fill:#e0e0e0;font:22px 'Rajdhani',sans-serif}.small{fill:#b0b0b0;font:17px 'Rajdhani',sans-serif}.green{fill:#00ff41;font:19px 'Share Tech Mono',monospace}.blue{fill:#90c9ff;font:19px 'Share Tech Mono',monospace}.purple{fill:#d2b1ff;font:18px 'Share Tech Mono',monospace}.line{fill:none;stroke:#00ff41;stroke-width:3;marker-end:url(#arrow)}.cross{fill:none;stroke:#a855f7;stroke-width:3;stroke-dasharray:9 7;marker-end:url(#purple-arrow)}
+    </style>
+  </defs>
+  <rect class="bg" width="1280" height="640" rx="18"/>
+  <text class="green" x="32" y="40">GROUP ACADEMIC PROJECT · SIMULATED WORDPRESS MIGRATION · CONCEPTUAL / NOT TO SCALE</text>
+  <rect class="aws" x="30" y="72" width="820" height="526" rx="18"/>
+  <text class="green" x="56" y="108">AWS · APPLICATION HOSTING AND SECURITY CONTROLS</text>
+  <rect class="azure" x="878" y="72" width="370" height="526" rx="18"/>
+  <text class="blue" x="902" y="108">AZURE · TEAM-LED WORKSTREAM</text>
+  <rect class="node" x="58" y="153" width="124" height="84" rx="10"/>
+  <text class="label" x="88" y="188">Visitor</text><text class="small" x="78" y="215">HTTPS</text>
+  <rect class="green-node" x="212" y="145" width="146" height="100" rx="10"/>
+  <text class="label" x="232" y="183">App Load</text><text class="label" x="230" y="211">Balancer</text>
+  <rect class="green-node" x="396" y="145" width="194" height="100" rx="10"/>
+  <text class="label" x="414" y="183">WordPress</text><text class="small" x="416" y="213">EC2 · Auto Scaling</text>
+  <rect class="green-node" x="630" y="145" width="184" height="100" rx="10"/>
+  <text class="label" x="659" y="183">Amazon RDS</text><text class="small" x="659" y="213">MySQL backend</text>
+  <path class="line" d="M182 195H206"/><path class="line" d="M358 195H390"/><path class="line" d="M590 195H624"/>
+  <text class="small" x="216" y="270">Public entry point</text><text class="small" x="406" y="270">Application tier</text><text class="small" x="662" y="270">Private data tier</text>
+  <rect class="purple-node" x="310" y="315" width="198" height="82" rx="10"/>
+  <text class="purple" x="332" y="348">FortiGate + VPN</text><text class="small" x="333" y="376">inter-cloud control</text>
+  <rect class="node" x="66" y="452" width="196" height="100" rx="10"/>
+  <text class="label" x="88" y="486">Lambda</text><text class="small" x="88" y="515">scheduled EBS snapshots</text><text class="small" x="88" y="540">EventBridge trigger</text>
+  <rect class="node" x="286" y="452" width="180" height="100" rx="10"/>
+  <text class="label" x="315" y="486">S3 backups</text><text class="small" x="312" y="515">private + encrypted</text>
+  <rect class="node" x="490" y="452" width="324" height="100" rx="10"/>
+  <text class="label" x="515" y="486">CloudWatch + CloudTrail</text><text class="small" x="515" y="515">monitoring, audit and SNS alerts</text>
+  <rect class="azure" x="914" y="153" width="296" height="112" rx="10"/>
+  <text class="blue" x="944" y="191">Azure DNS</text><text class="small" x="944" y="221">resolves to AWS load balancer</text>
+  <path class="line" d="M914 214C734 52 470 66 288 140"/>
+  <rect class="azure" x="914" y="316" width="296" height="116" rx="10"/>
+  <text class="blue" x="942" y="356">Identity and governance</text><text class="small" x="944" y="387">RBAC · MFA · tenant controls</text>
+  <path class="cross" d="M508 356H907"/>
+  <text class="small" x="626" y="344">controlled cross-cloud path</text>
+  <text class="small" x="912" y="493">Azure services were implemented</text><text class="small" x="912" y="520">by a teammate; Geni documented</text><text class="small" x="912" y="547">the integration workstream.</text>
+</svg>

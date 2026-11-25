@@ -1,5 +1,49 @@
 # SEO Implementation Report
 
+## Phase 4: strict design-preservation audit (25 November 2026)
+
+The current approved working tree was treated as the visual baseline, including its existing project pages and all uncommitted changes. No public page, visible text, HTML structure, stylesheet, font, image, asset, animation, interaction, or URL was modified during Phase 4. The only implementation change is to static SEO regression validation and its CI path filters; the remaining changes are SEO documentation. The current Lighthouse figures below are baseline lab observations, not field CWV.
+
+### Baseline and after-change verification
+
+Before implementation, full-page browser screenshots were captured for all four current routes at 375 × 812, 390 × 844, 768 × 1024, 1440 × 900, and 1920 × 1080 (20 captures), plus the homepage navigation-open state at 375 × 812 and 768 × 1024 (2 captures). Chrome loaded every page with HTTP 200 and reported zero page errors. Baseline images are held outside the website/repository at `/private/tmp/seo-phase4-visual-baseline/`.
+
+Lighthouse 13.6.0 / Chrome 151 baseline, local Python static server, one run per route and viewport:
+
+| Page | Viewport | Perf. | A11y | Best practices | SEO | FCP | LCP | CLS | TBT | Transfer / requests | Console errors |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Homepage | Mobile | 95 | 100 | 100 | 100 | 1.66 s | 2.86 s | 0.0002 | 0 ms | 588 KiB / 19 | 0 |
+| Homepage | Desktop | 100 | 100 | 100 | 100 | 0.38 s | 0.60 s | 0.0001 | 0 ms | 588 KiB / 19 | 0 |
+| FortiGate in AWS | Mobile | 100 | 100 | 100 | 100 | 1.05 s | 1.05 s | 0.0000 | 0 ms | 159 KiB / 9 | 0 |
+| FortiGate in AWS | Desktop | 100 | 100 | 100 | 100 | 0.28 s | 0.28 s | 0.0000 | 0 ms | 159 KiB / 9 | 0 |
+| AWS site-to-site VPN | Mobile | 100 | 100 | 100 | 100 | 1.05 s | 1.05 s | 0.0140 | 0 ms | 159 KiB / 9 | 0 |
+| AWS site-to-site VPN | Desktop | 100 | 100 | 100 | 100 | 0.28 s | 0.28 s | 0.0000 | 0 ms | 159 KiB / 9 | 0 |
+| Multi-cloud WordPress | Mobile | 100 | 100 | 100 | 100 | 1.05 s | 1.05 s | 0.0001 | 0 ms | 163 KiB / 9 | 0 |
+| Multi-cloud WordPress | Desktop | 100 | 100 | 100 | 100 | 0.29 s | 0.29 s | 0.0000 | 0 ms | 163 KiB / 9 | 0 |
+
+The homepage's mobile LCP remains about 0.36 s above the 2.5 s target. The VPN page's one mobile run showed CLS 0.014, within the 0.1 threshold. Project pages scored well in single lab runs; repeatability and field CWV remain unmeasured. Lighthouse throttling and the Python server are synthetic and do not represent GitHub Pages caching/compression or actual visitors.
+
+After the non-rendering changes (checker, CI filters and documentation), the same eight Lighthouse audits retained the same category scores, 19/9 request counts, and byte-for-byte identical transfer sizes per route. LCP stayed within 0–20 ms of baseline on all routes. Homepage CLS/TBT varied between individual simulated runs (mobile 0.0002 → 0.0162 and 0 → 42 ms; desktop 0.0001 → 0.0355 and 0 ms), illustrating lab-run variability; values remain under the stated CLS target. No site rendering files or resource requests changed.
+
+The after browser pass repeated the same 22 screenshots, viewport sizes and menu states. Screenshot dimensions matched every baseline. A raw pixel comparison with a per-channel threshold of 8/255 found 16/22 captures with no above-threshold pixel differences; six full-page captures had differences from 0.06% to 0.61%, except the FortiGate page at 1920 px (2.36%). The comparison still contains timing-sensitive animated/background rendering, so the strict zero-pixel visual criterion is **not a clean automated pass**. Review of the captures found no attributable page-code change; HTML, CSS, font, image and JavaScript files were not changed in Phase 4. Treat exact visual equivalence as manually reviewed but not proved by a deterministic pixel test.
+
+The static SEO check was strengthened to verify unique Open Graph/Twitter titles, matching social title/description/image values and alt text, Schema.org `@graph` structure, homepage Person/ProfilePage identity references, each article's canonical/author/BreadcrumbList references, and sitemap duplicates/HTTPS host/parameter/fragment/lastmod parity. Existing CI now runs when project HTML or local fonts change. The dependency-free check passes. No metadata deficiencies were found that justify changing current site HTML.
+
+### Findings by action class
+
+| Class | Finding | Phase 4 action |
+|---|---|---|
+| Safe without visual change | Titles, descriptions, canonicals, index robots, Open Graph/Twitter, `en-NZ`, article/profile JSON-LD, crawlable links, four-URL sitemap and crawler policy are present and locally consistent. | Kept existing values; expanded regression coverage and verified all routes. |
+| Requires visible copy change | Further personal-story depth, additional first-person project lessons, or new editorial content. | Documented only in [`SEO-CONTENT-RECOMMENDATIONS.md`](SEO-CONTENT-RECOMMENDATIONS.md); approval is required. |
+| Requires design/architecture change | New navigation, visible page types, server redirects, dynamic sitemap generation or environment-specific deployment rules. | Not implemented; static GitHub Pages site does not have a build/server config in this repository. |
+| Requires external account access | Google Search Console/Bing Webmaster Tools verification, search query/index coverage, PageSpeed Insights field data and index requests. | Not available in the workspace. |
+| Requires verified owner information | External profile reciprocity, additional biography, business or location claims, new credentials. | No facts inferred or added. |
+| Already optimized / not applicable | Canonicals and metadata are unique; search crawlers are allowed; one language; personal rather than local service business. | No alternate language, LocalBusiness, price, review, FAQ or service schema added. |
+
+Chrome rendering returned HTTP 200 for all local routes and reported no page or console errors. Responsive functional checks across all four pages at 375, 390, 768, 1440 and 1920 px found no horizontal page overflow; project diagrams remained horizontally scrollable on narrow screens; the mobile/tablet menu opened and closed with expected ARIA state. `tidy` available on the host is a 2006 HTML Tidy build that treats HTML5 elements (`main`, `nav`, `canvas`, `article`, `svg`) as unknown, so it is not a reliable HTML5 validator; browser parsing and Lighthouse were used instead. The strict offline check passes, but Google Rich Results validation was not available.
+
+Production endpoints and external profile URLs could not be fetched with the available web reader in this phase. A search sample for the exact name/domain did not surface the portfolio; search results are not authoritative proof of non-indexing. Use the owner-controlled webmaster accounts after an authorized deployment. No deployment was performed.
+
 ## Phase 3: personal brand authority and validation (25 November 2026)
 
 This is the current repository assessment. Phase 2 figures below are retained as a dated history; they are not the latest results. No deployment was performed.

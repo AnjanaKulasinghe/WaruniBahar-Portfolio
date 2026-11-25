@@ -75,6 +75,10 @@ Local Chrome/Lighthouse confirms all four static HTML pages render without JavaS
 
 On 25 November 2026, read-only requests found the apex HTTPS page and the live `robots.txt` and `sitemap.xml` reachable, with HTTP and `www` variants redirecting to apex HTTPS. The live HTML, crawler policy, and sitemap are still the old version. Therefore OAI-SearchBot allowance, current canonical/schema/copy, and current one-URL sitemap are locally verified in the repository but not yet verified on the public site. Search Console/Bing indexing reports and field CWV are not accessible here.
 
+### Phase 4 preservation and discovery check
+
+The four current routes and existing design were treated as the approved baseline. No visible copy or design changes are approved by this pass; potential content changes are recorded in [`SEO-CONTENT-RECOMMENDATIONS.md`](SEO-CONTENT-RECOMMENDATIONS.md). An exact-name/domain web-search sample on 25 November did not surface the portfolio, but this provider is not a substitute for Google/Bing indexing reports and this does not establish that the site is unindexed. Direct public endpoint and LinkedIn-profile retrieval were unavailable in the web reader for this pass. Confirm public identity links and indexed canonical URLs through owner-controlled tools after authorized publishing.
+
 ## Off-page growth
 
 1. Keep LinkedIn profile headline, location, credentials, and current project links consistent with the portfolio.

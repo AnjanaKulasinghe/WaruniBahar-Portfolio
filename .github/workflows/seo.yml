@@ -4,10 +4,12 @@ on:
   push:
     paths:
       - "index.html"
+      - "projects/**/*.html"
       - "robots.txt"
       - "sitemap.xml"
       - "assets/img/**"
       - "assets/css/**"
+      - "assets/fonts/**"
       - "assets/js/**"
       - "scripts/check_seo.py"
       - ".github/seo/**"
@@ -15,10 +17,12 @@ on:
   pull_request:
     paths:
       - "index.html"
+      - "projects/**/*.html"
       - "robots.txt"
       - "sitemap.xml"
       - "assets/img/**"
       - "assets/css/**"
+      - "assets/fonts/**"
       - "assets/js/**"
       - "scripts/check_seo.py"
       - ".github/seo/**"

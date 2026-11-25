@@ -1,6 +1,6 @@
 # SEO Growth Plan
 
-The site is a public personal portfolio, not a job application or commercial service. It should help people understand Waruni's identity, interests, experiences and work, then make it easy to connect. Use real search and contact data to adjust priorities. The time periods below start after the SEO changes are deployed; they do not imply ranking or traffic guarantees.
+The site is a public personal portfolio, not a job application or commercial service. It should help people understand Waruni's identity, interests, experiences and work, then make it easy to connect. Current visible content, routes and design are the approved baseline. Any copy, new page, link, navigation or design change requires explicit owner approval. Use real search and contact data to adjust priorities; no ranking or traffic outcomes are guaranteed.
 
 ## Phase 3 baseline and current state (25 November 2026)
 
@@ -10,10 +10,16 @@ The site is a public personal portfolio, not a job application or commercial ser
 - Search review is focused on public identity, credentials and technical project pages rather than vacancy listings. The full name should be paired with Auckland/New Zealand context; the shorter “Geni Bahar” is ambiguous. No volume or ranking data is available. The three verified academic project case studies are in the repository, with additional pages deferred until reliable source material exists.
 - Webmaster/analytics accounts and field Core Web Vitals remain unverified. Follow [`SEO-CHECKLIST.md`](SEO-CHECKLIST.md) after an authorized release.
 
+## Phase 4 baseline and constraint (25 November 2026)
+
+- Captured 22 browser screenshots: four routes × five viewport sizes, plus the homepage navigation-open state at mobile and tablet widths. Local pages returned HTTP 200; Lighthouse found no console errors. Exact measurements are in [`SEO-REPORT.md`](SEO-REPORT.md).
+- Current one-run mobile/desktop audits scored every route 100 for Accessibility, Best Practices and SEO. Homepage Performance was 95 mobile and 100 desktop; mobile LCP was 2.86 s. Project pages scored 100 in single runs. These synthetic tests are not field Core Web Vitals.
+- Phase 4 changed only the SEO checker, its CI path coverage and documentation; it did not change rendered site files. All visible content and route opportunities remain recommendations requiring explicit approval, collected in [`SEO-CONTENT-RECOMMENDATIONS.md`](SEO-CONTENT-RECOMMENDATIONS.md).
+
 ## Days 1–30: verify and establish a baseline
 
 1. Publish the reviewed repository changes through the normal GitHub Pages process.
-2. Confirm HTTPS and preferred host behavior for apex, `www`, and HTTP URLs. Confirm the canonical homepage, `robots.txt`, sitemap, share image, and profile WebP return successfully.
+2. Confirm HTTPS and preferred host behavior for apex, `www`, and HTTP URLs. Confirm the canonical homepage, all four routes, `robots.txt`, sitemap, share image, and profile WebP return successfully.
 3. Verify `genibahar.com` as a Domain property in Google Search Console; submit `https://genibahar.com/sitemap.xml`; inspect the canonical homepage and review Page indexing, HTTPS, manual actions, and Core Web Vitals reports.
 4. Verify the site in Bing Webmaster Tools, submit the same sitemap, inspect crawl/indexing reports, and review IndexNow eligibility. No IndexNow key or API credential is committed; add it only if you choose to use the service.
 5. Take a mobile and desktop Lighthouse run after deployment and record LCP, INP proxy/TBT, CLS, accessibility, best-practices, and SEO scores. Treat Lighthouse as lab data; compare field data from Search Console/CrUX when enough visits exist.
@@ -26,15 +32,15 @@ The site is a public personal portfolio, not a job application or commercial ser
 2. The FortiGate, VPN and multi-cloud WordPress case studies are already implemented from reports. Review additional source reports and publish another story only if it adds first-hand, distinct context that can be shared publicly. Continue to distinguish individual from team work and academic labs from production experience.
 3. After release, inspect page indexing and query data for each canonical project URL. Refine summaries if search impressions indicate a mismatch with visitor intent; do not add generic keyword pages.
 4. Keep the sitemap and multi-page regression checker aligned as new public pages are added; update `lastmod` only for meaningful content changes.
-5. Review contact clarity and ease on phone and keyboard. Preserve the current look while making it easy for any visitor to reach email, LinkedIn, and relevant project evidence.
+5. Review that existing contact paths remain reachable by phone and keyboard. Document improvement ideas only; do not change the visible contact flow without explicit approval.
 6. Share useful project notes through authentic professional channels and update the LinkedIn portfolio URL; do not buy links or create artificial testimonials.
 
 ## Days 61–90: improve based on evidence
 
-1. Compare query and landing-page performance with the 30-day baseline. Refine page titles and summaries where impressions are high but click-through is weak, and ensure changes remain factual.
+1. Compare query and landing-page performance with the 30-day baseline. If titles or summaries appear to need visible/rendered changes, prepare a proposal for approval before editing them.
 2. Check indexing and canonical selection for new case studies; resolve discovered crawl, mobile, link, or schema errors. Do not repeatedly submit unchanged sitemaps.
 3. Recheck Core Web Vitals field data and run the same Lighthouse profile. Prioritize measured regressions such as render delay, font requests, animation CPU work, image payload, or layout shift.
-4. Add one high-quality technical note only if there is a useful first-hand lesson not already covered. A small set of useful pages is preferable to generic keyword pages.
+4. If Search Console reveals a specific unanswered query, prepare a source-backed article recommendation. Do not create the page or change visible copy until its topic and design are approved.
 5. Seek legitimate professional mentions through alumni, credential providers, relevant NZ communities, and event participation where genuine. Track earned mentions and referral traffic; avoid spam outreach.
 6. Review credential dates, life/work details, contact information, and project links for accuracy. Refresh sitemap `lastmod` only when a page's actual content changes.
 

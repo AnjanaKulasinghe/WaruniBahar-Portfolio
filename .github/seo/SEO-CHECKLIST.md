@@ -1,5 +1,13 @@
 # SEO Checklist for New Public Pages
 
+## Design-preservation gate
+
+- Treat the currently approved rendered website as the baseline. Preserve public routes, visible content, layout, typography, images, breakpoints, interactions and animations.
+- Implement automatically only changes that do not alter the rendered page or user-visible browser experience. Put any content, route, navigation or design proposal in [`SEO-CONTENT-RECOMMENDATIONS.md`](SEO-CONTENT-RECOMMENDATIONS.md) and wait for explicit approval.
+- Before work, capture representative page/view states and record existing tests and Lighthouse measurements. After work, repeat the captures and compare at matching viewport sizes; investigate any deterministic visual or functional difference.
+- If comparison tooling or browser access is unavailable, record design preservation as unverified and restrict the change to metadata, structured data, crawler files, regression checks and documentation.
+- Do not replace the site baseline screenshots with post-change images to make a comparison pass. Mask or control only inherently dynamic content such as canvas particles or animation timing, and disclose that treatment.
+
 Use this checklist for each new public HTML page or substantial public feature page. Do not apply page SEO to private, admin, or confidential content; protect those routes through access controls, and use `noindex` only when the page is still meant to be publicly accessible but excluded from search.
 
 ## Before publishing
@@ -54,4 +62,4 @@ The 25 November 2026 read-only check found the apex page and current public robo
 - [ ] Check crawl accessibility from a public network and review Search Console/Bing reports or server/CDN logs for blocked HTML, CSS, images, robots, sitemap, or bot requests.
 - [ ] Compare the rendered public DOM at mobile and desktop: same core visible profile copy, headings, projects and links; no content requiring interaction or JavaScript to appear.
 
-**Current state:** the domain variant redirects and HTTP reachability checks passed when observed; homepage, robots and sitemap are publicly accessible, but they still contain prior content/configuration. This repository now contains four canonical public HTML pages. Search Console/Bing verification, rich-result validation, public PSI, indexing request, profile checks, deployed HTML checks and crawl-log confirmation remain outstanding.
+**Current state:** a previous Phase 2 endpoint check observed expected domain redirects and reachable homepage/robots/sitemap, serving the then-current prior configuration. A fresh Phase 4 direct fetch through the available web reader was unavailable, so current public status must be rechecked from a public network. This repository contains four canonical public HTML pages. Search Console/Bing verification, rich-result validation, public PSI, indexing requests, profile checks, deployed HTML checks and crawl-log confirmation remain outstanding.

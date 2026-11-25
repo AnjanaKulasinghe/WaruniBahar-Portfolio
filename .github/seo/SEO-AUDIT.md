@@ -97,6 +97,16 @@ The original Google Fonts were replaced with self-hosted WOFF2 files under their
 
 The earlier Phase 2 discussion above is retained as dated history; its statements that case-study pages were not added and the sitemap held one URL were accurate then and are superseded by this Phase 3 audit.
 
+## Phase 4: strict design-preservation audit (25 November 2026)
+
+The current working tree, including uncommitted Phase 3 pages and site changes, was the baseline. The four current HTML routes loaded locally with HTTP 200. Full-page screenshots were captured for each at 375 × 812, 390 × 844, 768 × 1024, 1440 × 900 and 1920 × 1080, plus the homepage menu-open state at 375 × 812 and 768 × 1024. The browser reported no page errors. Before/after visual comparison is recorded in [`SEO-REPORT.md`](SEO-REPORT.md); no website-rendering files were changed for Phase 4.
+
+Lighthouse 13.6.0 / Chrome 151 baseline audits covered all four pages in mobile and desktop modes. All routes scored 100 for Accessibility, Best Practices and SEO. Homepage Performance was 95 mobile / 100 desktop; project pages scored 100 in single runs. Mobile homepage LCP was 2.86 s, and the VPN page's one mobile run reported 0.014 CLS. These are local simulated lab values only. All reports had zero browser console errors.
+
+Existing metadata, canonical URLs, robots directives, JSON-LD, internal routes and sitemap are present and consistent. The existing static checker now validates social metadata correspondence and uniqueness, schema identity/article/breadcrumb references, and sitemap uniqueness/canonical form; the CI workflow now includes project HTML and font changes in its trigger paths. No visible copy or design changes are approved by this brief, so content opportunities are recommendations only in [`SEO-CONTENT-RECOMMENDATIONS.md`](SEO-CONTENT-RECOMMENDATIONS.md).
+
+**Phase 4 status:** safely implementable checks updated and passing; rendered design change not introduced; external production/indexing validation remains blocked by unavailable public endpoint/account access. This repository has no build framework, dynamic sitemap or server-side redirect configuration. No deployment was performed.
+
 ## References
 
 - [Google Search Essentials](https://developers.google.com/search/docs/essentials)

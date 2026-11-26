@@ -1,5 +1,4 @@
 // Main JavaScript for Portfolio Interactivity
-console.log('🚀 Portfolio initialization started...');
 
 // ===== NAVIGATION =====
 const hamburger = document.getElementById('hamburger');
@@ -412,35 +411,3 @@ const initCertificationsSlider = () => {
 
 // Initialize slider when DOM is ready
 initCertificationsSlider();
-
-// ===== CONSOLE ART =====
-console.log(`
-╔══════════════════════════════════════════════════════════════╗
-║                                                              ║
-║   ██     ██  █████  ██████  ██    ██ ███    ██ ██           ║
-║   ██     ██ ██   ██ ██   ██ ██    ██ ████   ██ ██           ║
-║   ██  █  ██ ███████ ██████  ██    ██ ██ ██  ██ ██           ║
-║   ██ ███ ██ ██   ██ ██   ██ ██    ██ ██  ██ ██ ██           ║
-║    ███ ███  ██   ██ ██   ██  ██████  ██   ████ ██           ║
-║                                                              ║
-║              BAHAR - CYBERSECURITY & CLOUD                   ║
-║                                                              ║
-║   Portfolio v1.0                                             ║
-║   © 2026 All Rights Reserved                                 ║
-║                                                              ║
-╚══════════════════════════════════════════════════════════════╝
-
-🔐 Cybersecurity Portfolio Loaded Successfully
-🌐 Cloud Computing Specialist
-✅ QA Engineering Expert
-
-> Ready to secure the digital future...
-`);
-
-console.log('✅ Portfolio initialization complete!');
-
-// ===== PERFORMANCE MONITORING =====
-window.addEventListener('load', () => {
-    const loadTime = performance.now();
-    console.log(`⚡ Page loaded in ${Math.round(loadTime)}ms`);
-});

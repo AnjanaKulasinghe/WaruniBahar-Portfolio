@@ -1,11 +1,8 @@
 // Cyber-themed Particle System for Background Animation
-console.log('🔐 Cyber particle system loading...');
 
 const canvas = document.getElementById('particle-canvas');
 if (!canvas) {
-    console.error('❌ Canvas element not found!');
-} else {
-    console.log('✅ Canvas element found');
+    console.error('Canvas element not found.');
 }
 
 const ctx = canvas.getContext('2d');
@@ -126,7 +123,6 @@ function createMatrixRain() {
 }
 
 // Start animations
-console.log(`✨ Starting cyber particle animation with ${particleCount} particles`);
 animateParticles();
 createMatrixRain();
 
